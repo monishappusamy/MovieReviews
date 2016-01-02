@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :reviews
   devise_for :users
-  resources :movies
-  get 'welcome/index'
+  resources :movies do
+    resources :reviews, except: [:show, :index]
+  end
   root 'movies#index'
 end
