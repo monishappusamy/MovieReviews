@@ -26,10 +26,7 @@
 
 <script>
     $('#star-rating').raty({
-      starOn: '<%= image_path('star-on.png') %>',
-      starOff: '<%= image_path('star-off.png') %>',
-      path: '',
+      path: 'http://s3.amazonaws.com/moviereviewing/assets/',
       scoreName: 'review[rating]'
-      space: true
   });
 </script>
