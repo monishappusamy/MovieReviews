@@ -11,24 +11,16 @@
           <p>
             <strong>Description:</strong>
             <%= @movie.description %>
-          </p>
 
-          <p>
-            <strong>Movie length:</strong>
+            <strong> | Movie length:</strong>
             <%= @movie.movie_length %>
-          </p>
 
-          <p>
-            <strong>Director:</strong>
+            <strong> | Director:</strong>
             <%= @movie.director %>
-          </p>
 
-          <p>
-            <strong>Rating:</strong>
+            <strong> | Rating:</strong>
             <%= @movie.rating %>
           </p>
-
-          <%= link_to "Write Review", new_movie_review_path(@movie) %>
         </div>
       </div>
       <div class = "col-md-7 col-md-offset-1">
@@ -36,15 +28,20 @@
         <p><%= @movie.description %></p>
 
         <% if @reviews.blank? %>
-        <h3>No reviews just yet, would you like to add the first!</h3>
-        <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+          <h3>No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
         <% else %>
-        <% @reviews.each do |review| %>
-        <div class="reviews">
-          <div class="star-rating" data-score=<%=review.rating%></div>
-          <p><%= review.comment %></p>
-        </div>
-        <% end %>
+        <hr/>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score=<%=review.rating%>> </div>
+                <p><%= review.comment %></p>
+                <hr/>
+            </div>
+          <% end %>
+          <p>
+            <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+          </p>
         <% end %>
       </div>
     </div>
