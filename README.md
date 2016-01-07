@@ -22,3 +22,14 @@ A Ruby on Rails database backed web application for movies, which includes movie
 ###Production URL:
 
 https://shrouded-everglades-9490.herokuapp.com
+
+
+###Functionalities:
+
+Movies - Create, Read, Update, Delete
+
+Review - Create, Read, Update, Delete
+
+Users - Create, Read, Update, Delete
+
+Sign Up, Sign In, Sign Out
